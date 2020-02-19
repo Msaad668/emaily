@@ -13,6 +13,9 @@ mongoose.connect(keys.MONGO_URI, {useUnifiedTopology: true , useNewUrlParser: tr
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.use(
     cookieSession({
         maxAge: 30 * 24 * 60 * 60 * 1000,
